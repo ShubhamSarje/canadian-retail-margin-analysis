@@ -2,7 +2,9 @@
 
 **Finding $1.1M in hidden losses across 8,399 retail transactions using SQL**
 
-An end-to-end analysis of a Canadian retail business that appeared to be running a thin 10.2% margin. The analysis reveals that the company is really *two businesses* — a healthy one earning 24.6%, and a loss-making one destroying $1.1M — and identifies the specific, controllable driver behind the losses.
+An end-to-end root-cause analysis of a retail business running a thin 10.2% margin. The analysis reveals that the company is really *two businesses* — a healthy one earning 24.6%, and a loss-making one destroying $1.1M — and identifies the specific, controllable driver behind the losses.
+
+> **About the data:** this uses the *Superstore* sample dataset (Canadian variant) — synthetic data originally produced by Tableau Software for analytics training. The figures are illustrative rather than real business results. **The analytical method is the point of this project**, not the findings themselves.
 
 **Tools:** PostgreSQL (Supabase) · SQL · 21 analytical queries
 **Techniques:** aggregations, `CASE WHEN` bucketing, multi-table `JOIN`, Common Table Expressions, date functions
@@ -41,9 +43,9 @@ An end-to-end analysis of a Canadian retail business that appeared to be running
 
 ## Business context
 
-A retail distributor operating across all 13 Canadian provinces and territories, selling Furniture, Office Supplies, and Technology to Consumer, Corporate, Home Office, and Small Business customers between 2009 and 2012.
+The dataset models a fictional retail distributor operating across all 13 Canadian provinces and territories, selling Furniture, Office Supplies, and Technology to Consumer, Corporate, Home Office, and Small Business customers between **2009 and 2012**.
 
-At 10.2% net margin, leadership would reasonably assume the business is simply low-margin. The purpose of this analysis was to test that assumption and determine whether the margin problem is structural or fixable.
+The scenario: at 10.2% net margin, leadership would reasonably assume the business is simply low-margin. The purpose of this analysis was to test that assumption and determine whether the margin problem is structural or fixable — and, if fixable, to quantify exactly where and by how much.
 
 ---
 
@@ -59,9 +61,22 @@ At 10.2% net margin, leadership would reasonably assume the business is simply l
 
 ## The dataset
 
-Public retail sales dataset covering Canadian operations, sourced from [curran/data](https://github.com/curran/data) on GitHub.
+**Source:** the *Superstore* sales dataset — Canadian variant — obtained from the public [curran/data](https://github.com/curran/data) repository on GitHub.
 
-**8,399 rows × 21 columns**, including order and ship dates, order priority, quantity, sales, discount, profit, unit price, shipping cost, customer name and segment, province and region, product category and sub-category, and product base margin.
+**Nature of the data:** Superstore is a widely used sample dataset originally created by Tableau Software for business intelligence education. It is **synthetic**: the transactions, customers, and companies are fictional, generated to simulate realistic retail patterns including both profitable and loss-making orders. It is not real trading data, and no conclusion here should be read as a statement about any actual retailer or market.
+
+**Why it was chosen:** because the dataset is clean and widely understood, it removes data-wrangling noise and puts the focus squarely on analytical reasoning — forming a hypothesis, testing it, ruling out alternatives, and quantifying the result. This project is a demonstration of *method*.
+
+| | |
+|---|---|
+| Rows | 8,399 transactions |
+| Columns | 21 |
+| Period | 2009 – 2012 |
+| Geography | 13 Canadian provinces and territories |
+| Categories | Furniture, Office Supplies, Technology (17 sub-categories) |
+| Segments | Consumer, Corporate, Home Office, Small Business |
+
+**Fields include:** order and ship dates, order priority, quantity, sales, discount, profit, unit price, shipping cost, customer name and segment, province and region, product category and sub-category, product container, and product base margin.
 
 Loaded into a PostgreSQL database hosted on Supabase. Row count validated at 8,399 post-import.
 
