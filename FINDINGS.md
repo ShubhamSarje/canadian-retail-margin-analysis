@@ -1,6 +1,7 @@
 # Findings Log — Canadian Retail Margin Analysis
 
-**Dataset:** 8,399 retail transactions | 13 Canadian provinces | 2009–2012
+**Dataset:** *Superstore* sample dataset (Canadian variant) — 8,399 transactions | 13 provinces | 2009–2012
+**Nature:** Synthetic data created by Tableau Software for analytics training. Figures are illustrative, not real business results.
 **Database:** PostgreSQL (Supabase)
 **Analyst:** Shubham Sarje
 
