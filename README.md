@@ -25,6 +25,20 @@ An end-to-end analysis of a Canadian retail business that appeared to be running
 
 ---
 
+## Contents
+
+- [Business context](#business-context)
+- [Business questions](#business-questions)
+- [The dataset](#the-dataset)
+- [Analysis walkthrough](#analysis-walkthrough) — 10 steps with SQL
+- [Supporting findings](#supporting-findings)
+- [Exceptions and limitations](#exceptions-and-limitations)
+- [Recommendations](#recommendations)
+- [Method](#method)
+- [Repository structure](#repository-structure)
+
+---
+
 ## Business context
 
 A retail distributor operating across all 13 Canadian provinces and territories, selling Furniture, Office Supplies, and Technology to Consumer, Corporate, Home Office, and Small Business customers between 2009 and 2012.
@@ -360,17 +374,35 @@ Because the cost driver is product-based rather than geographic, remediation can
 
 ```
 canadian-retail-margin-analysis/
-├── README.md                  # This file
-├── FINDINGS.md                # Full findings log, all 17 findings
-├── sql/
-│   ├── 01_create_table.sql
-│   ├── 02_explore_sample.sql
-│   ├── 03_overall_health.sql
-│   ├── ...
-│   └── 21_high_risk_flags.sql
+├── README.md          # This file — analysis walkthrough and findings
+├── FINDINGS.md        # Detailed findings log (17 findings with full tables)
+├── sql/               # 21 documented queries, numbered in analysis order
+│   ├── 01_create_table.sql          # Schema definition
+│   ├── 02_explore_sample.sql        # Initial data inspection
+│   ├── 03_overall_health.sql        # Baseline metrics
+│   ├── 04_profit_split.sql          # Profitable vs loss-making
+│   ├── 05_loss_by_category.sql      # Category performance
+│   ├── 06_furniture_breakdown.sql   # Subcategory drill-down
+│   ├── 07_tables_root_cause.sql     # Root cause test
+│   ├── 08_shipping_threshold.sql    # Break-even threshold
+│   ├── 09_create_shipping_policy.sql
+│   ├── 10_join_shipping_performance.sql   # JOIN
+│   ├── 11_profit_contribution.sql         # CTE
+│   ├── 12_regional_performance.sql
+│   ├── 13_province_performance.sql
+│   ├── 14_segment_performance.sql
+│   ├── 15_top_customers.sql
+│   ├── 16_worst_customers.sql
+│   ├── 17_yearly_trend.sql
+│   ├── 18_monthly_seasonality.sql
+│   ├── 19_order_priority.sql
+│   ├── 20_shipping_delay.sql
+│   └── 21_high_risk_flags.sql             # CTE
 └── data/
-    └── retail_sales.csv       # Cleaned dataset
+    └── retail_sales.csv   # Cleaned dataset, 8,399 rows
 ```
+
+Each SQL file includes a header comment stating the business question it answers and the finding it produced.
 
 ---
 
@@ -378,4 +410,6 @@ canadian-retail-margin-analysis/
 
 Built by **Shubham Sarje** — Data & Business Analyst based in the Greater Toronto Area.
 
-[LinkedIn](https://linkedin.com/in/shubhamsarje) · [AI Sustainability Dashboard](https://ai-sustainability-shubham-s-tracker-two.vercel.app/)
+Dual post-graduate credentials (4.0 GPA) in Data Analytics and International Business Management, with a Bachelor of Commerce in accounting.
+
+[LinkedIn](https://linkedin.com/in/shubhamsarje) · shubham.s.sarje@gmail.com
