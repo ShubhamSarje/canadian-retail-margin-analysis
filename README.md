@@ -408,8 +408,12 @@ Each SQL file includes a header comment stating the business question it answers
 
 ## About
 
-Built by **Shubham Sarje** — Data & Business Analyst based in the Greater Toronto Area.
+**Shubham Sarje** — Data & Business Analyst, Toronto
 
-Dual post-graduate credentials (4.0 GPA) in Data Analytics and International Business Management, with a Bachelor of Commerce in accounting.
+**Approach:** Start with a business question, follow the evidence rather than the assumption, and stop only when the recommendation is specific enough to act on.
 
-[LinkedIn](https://linkedin.com/in/shubhamsarje) · shubham.s.sarje@gmail.com
+**Background:** Accounting-trained (B.Com) with dual post-graduate analytics credentials (4.0 GPA, Durham College) — which is why margin, cost structure, and profitability analysis are natural territory. Currently a Technical & Customer Experience Analyst at Transcom.
+
+**Toolkit:** SQL (PostgreSQL) · Power BI · Tableau · Excel *(certified)* · Python
+
+[LinkedIn](https://linkedin.com/in/shubhamsarje) · shubham.s.sarje@gmail.com · Toronto, ON
