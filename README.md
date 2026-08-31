@@ -2,7 +2,7 @@
 
 **Finding $1.1M in hidden losses across 8,399 retail transactions using SQL**
 
-### [View the live report →](https://canadian-retail-margin-report.vercel.app)
+### [View the live report →][![Canadian Retail Margin Analysis — live report](dashboard-preview.png)](https://canadian-retail-margin-report.vercel.app)
 
 An end-to-end root-cause analysis of a retail business running a thin 10.2% margin. The analysis reveals that the company is really *two businesses* — a healthy one earning 24.6%, and a loss-making one destroying $1.1M — and identifies the specific, controllable driver behind the losses.
 
