@@ -2,6 +2,8 @@
 
 **Finding $1.1M in hidden losses across 8,399 retail transactions using SQL**
 
+### [View the live report →](https://canadian-retail-margin-report.vercel.app)
+
 An end-to-end root-cause analysis of a retail business running a thin 10.2% margin. The analysis reveals that the company is really *two businesses* — a healthy one earning 24.6%, and a loss-making one destroying $1.1M — and identifies the specific, controllable driver behind the losses.
 
 > **About the data:** this uses the *Superstore* sample dataset (Canadian variant) — synthetic data originally produced by Tableau Software for analytics training. The figures are illustrative rather than real business results. **The analytical method is the point of this project**, not the findings themselves.
@@ -29,6 +31,7 @@ An end-to-end root-cause analysis of a retail business running a thin 10.2% marg
 
 ## Contents
 
+- [**Live report**](https://canadian-retail-margin-report.vercel.app)
 - [Business context](#business-context)
 - [Business questions](#business-questions)
 - [The dataset](#the-dataset)
@@ -413,8 +416,18 @@ canadian-retail-margin-analysis/
 │   ├── 19_order_priority.sql
 │   ├── 20_shipping_delay.sql
 │   └── 21_high_risk_flags.sql             # CTE
-└── data/
-    └── retail_sales.csv   # Cleaned dataset, 8,399 rows
+├── data/
+│   └── retail_sales.csv   # Cleaned dataset, 8,399 rows
+└── dashboard/             # React report deployed to Vercel
+    ├── README.md          # Stack and design notes
+    ├── index.html
+    ├── package.json
+    ├── vite.config.js
+    └── src/
+        ├── App.jsx        # All 11 report sections
+        ├── data.js        # Baked query results
+        ├── index.css      # Palette, typography, responsive rules
+        └── components/    # Charts, scroll reveals, SQL toggles
 ```
 
 Each SQL file includes a header comment stating the business question it answers and the finding it produced.
@@ -431,4 +444,4 @@ Each SQL file includes a header comment stating the business question it answers
 
 **Toolkit:** SQL (PostgreSQL) · Power BI · Tableau · Excel *(certified)* · Python
 
-[LinkedIn](https://linkedin.com/in/shubhamsarje) · shubham.s.sarje@gmail.com · Toronto, ON
+[Live report](https://canadian-retail-margin-report.vercel.app) · [LinkedIn](https://linkedin.com/in/shubhamsarje) · shubham.s.sarje@gmail.com · Toronto, ON
